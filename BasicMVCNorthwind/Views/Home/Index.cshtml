@@ -1,0 +1,52 @@
+﻿@model string
+@using BasicMVCNorthwind.Infrastructure
+
+@{
+    Layout = null;
+}
+
+@helper ListArrayItems(string[] items)
+{
+    <ul>
+        @foreach (string str in items)
+        {
+            <li>@str</li>
+        }
+    </ul>
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <style type="text/css">
+        span
+        {
+           font:bold 16px arial;  
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <span>External Helper Method</span> <br /><hr />
+        Here are the fruits: @Html.ListArrayItems((string[])ViewBag.Fruits)
+
+        <span>Inline Helper Method</span> <br /><hr />
+        Here are the fruits: @ListArrayItems((string[])ViewBag.Fruits)
+    </div>
+
+    <hr />
+    <p>This is the content from the view:</p>
+    <div style="border: thin solid black; padding: 10px">
+        Here is the message:
+        <p>@Model</p>
+    </div>
+    <p>This is the content from the helper method:</p>
+    <div style="border: thin solid black; padding: 10px">
+        @Html.DisplayMsg(Model)
+    </div>
+
+</body>
+</html>

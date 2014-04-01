@@ -1,0 +1,28 @@
+﻿@model BasicMVCNorthwind.Models.Products
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Products</legend>
+    <table border="1" style="border-collapse:collapse;">
+        <tr><td>Product Name:</td><td>@Html.DisplayFor(model => model.ProductName)</td></tr>
+        <tr><td>Supplier:</td><td>@ViewData["SupName"]</td></tr>
+        <tr><td>Category:</td><td>@ViewData["CatName"]</td></tr>
+        <tr><td>Quantity per Unit:</td><td>@Html.DisplayFor(model => model.QuantityPerUnit)</td></tr>
+        <tr><td>Unit Price:</td><td>@Html.DisplayFor(model => model.UnitPrice)</td></tr>
+        <tr><td>Units in Stock:</td><td>@Html.DisplayFor(model => model.UnitsInStock)</td></tr>
+        <tr><td>Units on Order:</td><td>@Html.DisplayFor(model => model.UnitsOnOrder)</td></tr>
+        <tr><td>Reorder Level:</td><td>@Html.DisplayFor(model => model.ReorderLevel)</td></tr>
+        <tr><td>Discontinued:</td><td>@Html.DisplayFor(model => model.Discontinued)</td></tr>
+        <tr><td>Discontinued:</td><td>@Html.CheckBoxFor(e => e.Discontinued, new { disabled = "true" })</td></tr>
+    </table>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ProductID }) |
+    @Html.ActionLink("Delete", "Delete", new { id = Model.ProductID}) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

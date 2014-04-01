@@ -1,0 +1,43 @@
+﻿@model BasicMVCNorthwind.Models.Customers
+
+@{
+    ViewBag.Title = "CreateCustomer";
+}
+
+<style type="text/css">
+    label {
+        display: inline-block;
+        width: 100px;
+    }
+
+    .dataElem {
+        margin: 5px;
+    }
+</style>
+
+@using(Html.BeginRouteForm("FormRoute",new{},FormMethod.Post,new {@class="customersClass", data_formType="customers"}))
+{
+       <div class="dataElem">
+           <label>Customer ID</label>
+           @Html.TextBox("customerId", @Model.CustomerID)
+       </div>
+       <div class="dataElem">
+           <label>Company Name</label>
+           @Html.TextBox("companyName", @Model.CompanyName)
+       </div>
+       <input type="submit" value="Submit" />
+}
+
+@*Generating the Input Element from a Model Property*@
+@using (Html.BeginRouteForm("FormRoute", new { }, FormMethod.Post, new { @class = "customersClass", data_formType = "customers" }))
+{
+    <div class="dataElem">
+        <label>Customer ID</label>
+        @Html.TextBox("CustomerID")
+    </div>
+    <div class="dataElem">
+        <label>Company Name</label>
+        @Html.TextBox("companyName")
+    </div>
+    <input type="submit" value="Submit" />
+}
