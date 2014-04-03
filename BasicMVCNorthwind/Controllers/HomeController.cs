@@ -32,5 +32,10 @@ namespace BasicMVCNorthwind.Controllers
         {
             return View(customer);
         }
+
+        public ActionResult CreateEmployee()
+        {
+            return View(new Employees());
+        }
     }
 }

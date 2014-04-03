@@ -1,0 +1,28 @@
+﻿@model BasicMVCNorthwind.Models.Employees
+
+@{
+    Layout = null;
+    Html.EnableClientValidation(true);
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CreateEmployee</title>
+</head>
+<body>
+    <div>
+        @*Using the Editor and EditorFor Helper Methods*@
+        @using (Html.BeginRouteForm("FormRoute", new { }, FormMethod.Post, new { @class = "employeeClass", data_formType = "employees" }))
+        {
+            <div class="dataElem">
+                <label>BirthDate</label>
+                @Html.Editor("BirthDate")
+            </div>
+            <input type="submit" value="Submit" />
+        }
+    </div>
+</body>
+</html>

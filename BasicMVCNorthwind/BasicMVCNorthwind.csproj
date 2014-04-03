@@ -301,6 +301,7 @@
     <Content Include="Views\Products\SearchList.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\CreateCustomer.cshtml" />
+    <Content Include="Views\Home\CreateEmployee.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

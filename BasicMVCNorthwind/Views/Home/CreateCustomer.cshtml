@@ -2,19 +2,10 @@
 
 @{
     ViewBag.Title = "CreateCustomer";
+    Html.EnableClientValidation(true);
 }
 
-<style type="text/css">
-    label {
-        display: inline-block;
-        width: 100px;
-    }
-
-    .dataElem {
-        margin: 5px;
-    }
-</style>
-
+<hr />
 @using(Html.BeginRouteForm("FormRoute",new{},FormMethod.Post,new {@class="customersClass", data_formType="customers"}))
 {
        <div class="dataElem">
@@ -27,7 +18,7 @@
        </div>
        <input type="submit" value="Submit" />
 }
-
+<hr />
 @*Generating the Input Element from a Model Property*@
 @using (Html.BeginRouteForm("FormRoute", new { }, FormMethod.Post, new { @class = "customersClass", data_formType = "customers" }))
 {
@@ -41,3 +32,58 @@
     </div>
     <input type="submit" value="Submit" />
 }
+
+<hr />
+@*Using the Strongly Typed Input Helper Methods*@
+@using (Html.BeginRouteForm("FormRoute", new { }, FormMethod.Post, new { @class = "customersClass", data_formType = "customers" }))
+{
+    <div class="dataElem">
+        <label>Customer ID</label>
+        @Html.TextBoxFor(m => m.CustomerID, new { @Size="5", @Style="background-color:Yellow;"})
+    </div>
+    <div class="dataElem">
+        <label>Company Name</label>
+        @Html.TextBoxFor(m=>m.CompanyName)
+    </div>
+     <div class="dataElem">
+        <label>Region</label>
+        @Html.ListBoxFor(m => m.Region, new MultiSelectList(new[] { "A", "B" }),
+        new {@Style="background-color:Yellow;width:150px;"})
+    </div>
+     <div class="dataElem">
+        <label>Country</label>
+        @Html.DropDownListFor(m => m.Country, new SelectList(new[] { "A", "B" }),"--Select--",
+        new {@Style="background-color:Yellow;width:150px;"})
+    </div>
+    <input type="submit" value="Submit" />
+}
+<hr />
+@*Using the Editor and EditorFor Helper Methods*@
+@using (Html.BeginRouteForm("FormRoute", new { }, FormMethod.Post, new { @class = "customersClass", data_formType = "customers" }))
+{
+    <div class="dataElem">
+        <label>Customer ID</label>
+        @Html.Editor("CustomerID")
+    </div>
+    <div class="dataElem">
+        <label>Company Name</label>
+        @Html.Editor("CompanyName")
+    </div>
+    <div class="dataElem">
+        <label>Region</label>
+        @Html.Editor("Region")
+    </div>
+    <div class="dataElem">
+        <label>Country</label>
+        @Html.Editor("Country")
+    </div>
+    <input type="submit" value="Submit" />
+}
+<hr />
+@*Using the Scaffolding Helper Methods in the CreateCustomer View*@
+@using (Html.BeginRouteForm("FormRoute", new { }, FormMethod.Post, new { @class = "customersClass", data_formType = "customers" }))
+{
+    @Html.EditorForModel()
+    <input type="submit" value="Submit" />
+}
+
