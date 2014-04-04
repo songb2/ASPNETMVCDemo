@@ -13,7 +13,9 @@ namespace BasicMVCNorthwind.Models
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.Web.Mvc;
-    
+
+
+    [MetadataType(typeof(CustomersMetaData))]
     public partial class Customers
     {
         public Customers()
@@ -34,6 +36,8 @@ namespace BasicMVCNorthwind.Models
 
         [Display(Name="Contact Title")]
         public string ContactTitle { get; set; }
+
+        [UIHint("MultilineText")]
         public string Address { get; set; }
         public string City { get; set; }
         public string Region { get; set; }
@@ -41,11 +45,12 @@ namespace BasicMVCNorthwind.Models
         [Display(Name = "Postal Code")]
         public string PostalCode { get; set; }
         public string Country { get; set; }
+
         public string Phone { get; set; }
 
         [ScaffoldColumn(false)]
         public string Fax { get; set; }
-    
+
         public virtual ICollection<Orders> Orders { get; set; }
         public virtual ICollection<CustomerDemographics> CustomerDemographics { get; set; }
     }

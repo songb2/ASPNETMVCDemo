@@ -11,6 +11,7 @@ namespace BasicMVCNorthwind.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class Employees
     {
@@ -26,6 +27,8 @@ namespace BasicMVCNorthwind.Models
         public string FirstName { get; set; }
         public string Title { get; set; }
         public string TitleOfCourtesy { get; set; }
+
+        [DataType(DataType.Date)]
         public Nullable<System.DateTime> BirthDate { get; set; }
         public Nullable<System.DateTime> HireDate { get; set; }
         public string Address { get; set; }
