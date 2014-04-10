@@ -5,16 +5,9 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicMVCNorthwind", "BasicMVCNorthwind\BasicMVCNorthwind.csproj", "{B94D7DAA-C516-4F6A-8E8E-144D2262BF7C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "URLAndAjaxHelperDemo", "URLAndAjaxHelperDemo\URLAndAjaxHelperDemo.csproj", "{2EC7D945-E050-419A-A320-97C8E2E0A53E}"
+EndProject
 Global
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 2
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://songb2.visualstudio.com/defaultcollection
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = BasicMVCNorthwind\\BasicMVCNorthwind.csproj
-		SccProjectName1 = BasicMVCNorthwind
-		SccLocalPath1 = BasicMVCNorthwind
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -24,6 +17,10 @@ Global
 		{B94D7DAA-C516-4F6A-8E8E-144D2262BF7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B94D7DAA-C516-4F6A-8E8E-144D2262BF7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B94D7DAA-C516-4F6A-8E8E-144D2262BF7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EC7D945-E050-419A-A320-97C8E2E0A53E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EC7D945-E050-419A-A320-97C8E2E0A53E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EC7D945-E050-419A-A320-97C8E2E0A53E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EC7D945-E050-419A-A320-97C8E2E0A53E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
