@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicMVCNorthwind", "BasicM
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "URLAndAjaxHelperDemo", "URLAndAjaxHelperDemo\URLAndAjaxHelperDemo.csproj", "{2EC7D945-E050-419A-A320-97C8E2E0A53E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcModels", "MvcModels\MvcModels.csproj", "{EC90EC89-0828-400D-A8F0-456346A8C33E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{2EC7D945-E050-419A-A320-97C8E2E0A53E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2EC7D945-E050-419A-A320-97C8E2E0A53E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2EC7D945-E050-419A-A320-97C8E2E0A53E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC90EC89-0828-400D-A8F0-456346A8C33E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC90EC89-0828-400D-A8F0-456346A8C33E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC90EC89-0828-400D-A8F0-456346A8C33E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC90EC89-0828-400D-A8F0-456346A8C33E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

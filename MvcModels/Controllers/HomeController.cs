@@ -27,5 +27,27 @@ namespace MvcModels.Controllers
 
             return View(dataItem);
         }
+
+        public ActionResult CreatePerson()
+        {
+            return View(new Person());
+        }
+
+        [HttpPost]
+        public ActionResult CreatePerson(Person model)
+        {
+            return View("Index", model);
+        }
+
+        /// <summary>
+        /// Demo Specifying Custom Prefixes
+        /// </summary>
+        /// <param name="summary">Specifying Custom Prefixes "HomeAddress" for AddressSummary parameter</param>
+        /// <returns></returns>
+        public ActionResult DisplaySummary(
+            [Bind(Prefix = "HomeAddress", Exclude="Country")]AddressSummary summary)
+        {
+            return View(summary);
+        }
     }
 }
