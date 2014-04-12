@@ -23,12 +23,7 @@ namespace URLAndAjaxHelperDemo.Controllers
             return View();
         }
 
-        public PartialViewResult GetPeopleData(string selectedRole="All")
-        {
-            return PartialView(GetData(selectedRole));
-        }
-
-        private IEnumerable<Person> GetData(string selectedRole)
+        public ActionResult GetPeopleData(string selectedRole = "All")
         {
             IEnumerable<Person> data = personData;
             if (selectedRole != "All")
@@ -36,26 +31,30 @@ namespace URLAndAjaxHelperDemo.Controllers
                 Role selected = (Role)Enum.Parse(typeof(Role), selectedRole);
                 data = personData.Where(p => p.Role == selected);
             }
-
-            return data;
+            // if it's ajax request, then parse to Json data
+            if (Request.IsAjaxRequest())
+            {
+                // prepare the data passed to Json method
+                // get JSON data we wanted and expressed in a way that is more useful
+                // eg. {"FirstName":"Adam","LastName":"Freeman","Role":"Admin"}
+                var formattedData = data.Select(p => new
+                {
+                    FirstName = p.FirstName,
+                    LastName = p.LastName,
+                    Role = Enum.GetName(typeof(Role), p.Role)
+                });
+                return Json(formattedData, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return PartialView(data);
+            }
         }
 
-        public JsonResult GetPeopleDataJson(string selectedRole = "All")
-        {
-            // prepare the data passed to Json method
-            // get JSON data we wanted and expressed in a way that is more useful
-            // eg. {"FirstName":"Adam","LastName":"Freeman","Role":"Admin"}
-            var data = GetData(selectedRole).Select(p => new { 
-                FirstName = p.FirstName,
-                LastName = p.LastName,
-                Role = Enum.GetName(typeof(Role), p.Role)
-            });
-            return Json(data, JsonRequestBehavior.AllowGet);
-        }
 
-        public ActionResult GetPeople(string selected = "All")
+        public ActionResult GetPeople(string selectedRole = "All")
         {
-            return View((object)selected);
+            return View((object)selectedRole);
         }
 
         //[HttpPost]
