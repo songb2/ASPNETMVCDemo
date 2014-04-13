@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "URLAndAjaxHelperDemo", "URL
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcModels", "MvcModels\MvcModels.csproj", "{EC90EC89-0828-400D-A8F0-456346A8C33E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelValidation", "ModelValidation\ModelValidation.csproj", "{FCF20A87-B669-4B17-8381-FD068CBB2B50}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{EC90EC89-0828-400D-A8F0-456346A8C33E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EC90EC89-0828-400D-A8F0-456346A8C33E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EC90EC89-0828-400D-A8F0-456346A8C33E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCF20A87-B669-4B17-8381-FD068CBB2B50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCF20A87-B669-4B17-8381-FD068CBB2B50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCF20A87-B669-4B17-8381-FD068CBB2B50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCF20A87-B669-4B17-8381-FD068CBB2B50}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
