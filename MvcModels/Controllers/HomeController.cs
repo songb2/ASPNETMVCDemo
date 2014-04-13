@@ -63,5 +63,12 @@ namespace MvcModels.Controllers
 
             return View(names);
         }
+
+        public ActionResult Address(IList<AddressSummary> addresses)
+        {
+            addresses = addresses ?? new List<AddressSummary>();
+
+            return View(addresses);
+        }
     }
 }

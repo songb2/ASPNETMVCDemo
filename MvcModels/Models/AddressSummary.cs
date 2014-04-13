@@ -2,7 +2,7 @@
 using System.Web.Mvc;
 namespace MvcModels.Models
 {
-    [Bind(Include = "Country")]
+    //[Bind(Include = "Country")]
     public class AddressSummary
     {
         public string City { get; set; }
