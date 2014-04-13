@@ -1,5 +1,6 @@
 ﻿using MvcModels.Models;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -64,9 +65,21 @@ namespace MvcModels.Controllers
             return View(names);
         }
 
-        public ActionResult Address(IList<AddressSummary> addresses)
+        //public ActionResult Address(IList<AddressSummary> addresses)
+        //{
+        //    addresses = addresses ?? new List<AddressSummary>();
+
+        //    return View(addresses);
+        //}
+
+        /// <summary>
+        /// Custom Value Provider use
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult Address()
         {
-            addresses = addresses ?? new List<AddressSummary>();
+            IList<AddressSummary> addresses = new List<AddressSummary>();
+            UpdateModel(addresses);
 
             return View(addresses);
         }

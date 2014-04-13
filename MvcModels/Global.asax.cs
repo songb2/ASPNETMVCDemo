@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using MvcModels.Infrastructure;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
@@ -13,6 +10,11 @@ namespace MvcModels
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
+
+            // register factory class which will create the instances of our providers
+            // register at the firstly place to take precedence over the built-in providers
+            ValueProviderFactories.Factories.Insert(0, new CustomValueProviderFactory());
+
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
