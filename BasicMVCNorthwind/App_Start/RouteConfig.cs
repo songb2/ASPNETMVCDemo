@@ -14,14 +14,20 @@ namespace BasicMVCNorthwind
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
 
-            routes.MapRoute("DefaultDetails", "{controller}/Details",
-    new { controller = "Products", action = "Index", id = UrlParameter.Optional });
+    //        routes.MapRoute("DefaultDetails", "{controller}/Details",
+    //new { controller = "Products", action = "Index", id = UrlParameter.Optional });
+
+            //routes.MapRoute(
+            //    name: "Default",
+            //    url: "My{controller}/{action}/{id}",
+            //    defaults: new { controller = "Products", action = "Index", id = UrlParameter.Optional }
+            //);
 
             routes.MapRoute(
-                name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Products", action = "Index", id = UrlParameter.Optional }
-            );
+    name: "Default",
+    url: "Products/{action}/{id}",
+    defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+);
 
             routes.MapRoute(name: "FormRoute", url: "app/forms/{controller}/{action}");
         }
