@@ -51,3 +51,13 @@
         </tr>
     </tbody>
 </table>
+
+@Ajax.ActionLink("Get current time", "GetTime","Home", new AjaxOptions { UpdateTargetId = "now" })
+
+<div id="now"></div>
+
+
+@section scripts
+{
+    <script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.js")"></script>
+}

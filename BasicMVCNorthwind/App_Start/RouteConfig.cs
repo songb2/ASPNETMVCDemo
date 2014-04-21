@@ -13,9 +13,11 @@ namespace BasicMVCNorthwind
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            //routes.MapRoute(name: "FormRoute", url: "app/forms/{controller}/{action}");
 
-    //        routes.MapRoute("DefaultDetails", "{controller}/Details",
-    //new { controller = "Products", action = "Index", id = UrlParameter.Optional });
+            routes.MapRoute("DefaultDetails", "{controller}/{action}/{id}", new { controller = "Products", action = "Index", id = UrlParameter.Optional });
+
+            //routes.MapRoute("DefaultDetails", "{controller}/Details", new { controller = "Products", action = "Index", id = UrlParameter.Optional });
 
             //routes.MapRoute(
             //    name: "Default",
@@ -23,13 +25,13 @@ namespace BasicMVCNorthwind
             //    defaults: new { controller = "Products", action = "Index", id = UrlParameter.Optional }
             //);
 
-            routes.MapRoute(
-    name: "Default",
-    url: "Products/{action}/{id}",
-    defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
-);
+            //            routes.MapRoute(
+            //    name: "Default",
+            //    url: "Products/{action}/{id}",
+            //    defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+            //);
 
-            routes.MapRoute(name: "FormRoute", url: "app/forms/{controller}/{action}");
+            
         }
     }
 }

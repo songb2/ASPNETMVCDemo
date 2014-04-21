@@ -18,9 +18,17 @@ This is a list of fruit names:
     <span><b>@name</b></span>
 }
 
+@Html.Partial("MyPartial", new string[]{"Apple","Dell","Google"})
+
 
 @section Footer {
     <div class="view">
         This is the footer
     </div>
 }
+
+<p>
+Call the child action:
+</p
+
+@Html.Action("Time")

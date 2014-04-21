@@ -26,5 +26,10 @@ namespace URLAndAjaxHelperDemo.Controllers
 
             return View();
         }
+
+        public ActionResult GetTime()
+        {
+            return Content(DateTime.Now.ToString("F"));
+        }
     }
 }
